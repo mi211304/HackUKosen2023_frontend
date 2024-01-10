@@ -1,0 +1,219 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:src="@drawable/topber">
+
+        <!-- 他のToolBarに関する設定 -->
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/topmore" />
+
+    <fragment
+        android:id="@+id/fragment_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="666dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一つ戻る"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/decision_button"
+        android:layout_marginBottom="3dp"
+        android:visibility="gone"
+        style="@style/RoundedButton" />
+
+    <!-- 決定ボタン -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/decision_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="決定"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:visibility="gone"
+        style="@style/RoundedButton" />
+
+
+    <!-- スタートボタン -->
+
+    <ImageView
+        android:id="@+id/loading_text"
+        android:layout_width="304dp"
+        android:layout_height="79dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="37dp"
+        android:padding="16dp"
+        android:src="@drawable/loading"
+        android:visibility="gone"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="40sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ゲームスタート"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:visibility="gone"
+        style="@style/RoundedButton" />
+
+    <!-- ゲームスタートカウントダウン画像用の ImageView -->
+    <ImageView
+        android:id="@+id/countdown_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+    <!-- タイマーの レイアウト -->
+
+
+
+    <ImageView
+        android:id="@+id/illustration_image"
+        android:layout_width="wrap_content"
+        android:layout_height="141dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="-1dp"
+        android:src="@drawable/pin" />
+
+    <TextView
+        android:id="@+id/countdown_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="1dp"
+        android:padding="16dp"
+        android:text="00"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/result_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="28dp"
+        android:src="@drawable/resourt"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/result_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="43dp"
+        android:padding="16dp"
+        android:text="00000"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/result_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="279dp"
+        android:layout_marginEnd="43dp"
+        android:padding="16dp"
+        android:text="000000"
+        android:textColor="@android:color/black"
+        android:textSize="33sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/result_bonus_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="43dp"
+        android:padding="16dp"
+        android:text="0000"
+        android:textColor="@android:color/black"
+        android:textSize="33sp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/result_total_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="43dp"
+        android:padding="16dp"
+        android:text="000000"
+        android:textColor="@android:color/black"
+        android:textSize="33sp"
+        android:visibility="gone"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/result_button"
+        style="@style/RoundedButton"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="489dp"
+        android:layout_marginEnd="108dp"
+        android:text="ゲーム終了"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/time_up_image"
+        android:layout_width="304dp"
+        android:layout_height="79dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="331dp"
+        android:layout_marginEnd="37dp"
+        android:padding="16dp"
+        android:src="@drawable/timeup"
+        android:textColor="@android:color/darker_gray"
+        android:visibility="gone"
+        android:textSize="40sp" />
+
+
+</RelativeLayout>
+
+
+
+
